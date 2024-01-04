@@ -8,7 +8,7 @@ app.use(cors());
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:3000", //frontend
+    origin: "https://draw-together-psi.vercel.app/", //frontend
   },
 });
 
