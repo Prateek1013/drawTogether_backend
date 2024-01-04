@@ -5,9 +5,11 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors());
+const URL=app.settings.env==="development" ? "http://localhost:3000/" :"https://draw-together-psi.vercel.app/"
+
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-  cors: "https://draw-together-psi.vercel.app/"
+  cors: URL
 });
 
 io.on("connection", (socket) => {
